@@ -48,6 +48,7 @@ export const Banner = () => {
   }
 
   return (
+    <body style={{background:"yellow"}}>
     <section className="banner" id="home">
       <Container className="Cont">
         <Row className="aligh-items-center">
@@ -73,5 +74,6 @@ export const Banner = () => {
         </Row>
       </Container>
     </section>
+    </body>
   )
 }

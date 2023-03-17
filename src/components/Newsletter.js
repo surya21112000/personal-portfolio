@@ -15,7 +15,12 @@ export const Newsletter = ({ status, message, onValidated }) => {
 
   useEffect(() => {
     if (status === 'success') clearFields();
-
+if(localStorage.getItem('like')){
+  setLike(true)
+}
+else{
+  setLike(false)
+}
 axios.get("https://suryaportfolio-db36b-default-rtdb.firebaseio.com/collection.json").then(res=>{console.log(res.data);setCount(res.data) } ).catch(err=>{console.log(err)})
 
 
@@ -52,6 +57,7 @@ axios.get("https://suryaportfolio-db36b-default-rtdb.firebaseio.com/collection.j
                 axios.put('https://suryaportfolio-db36b-default-rtdb.firebaseio.com/.json', {collection:count-1})
                 .then(response => {
                   console.log('User updated successfully:', response.data);
+                  localStorage.removeItem('like')
                 })
                 .catch(error => {
                   console.error('Error updating user:', error);
@@ -62,6 +68,8 @@ axios.get("https://suryaportfolio-db36b-default-rtdb.firebaseio.com/collection.j
                 
                 axios.put('https://suryaportfolio-db36b-default-rtdb.firebaseio.com/.json', {collection:count+1})
                 .then(response => {
+                  
+                  localStorage.setItem('like', like)
                   console.log('User updated successfully:', response.data);
                 })
                 .catch(error => {

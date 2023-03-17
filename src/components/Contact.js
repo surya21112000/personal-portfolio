@@ -58,7 +58,7 @@ export const Contact = () => {
           <Col size={12} md={6}>
             <TrackVisibility>
               {({ isVisible }) =>
-                <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
+                <div className={isVisible ? "es" : ""}>
                 <h2>Get In Touch</h2>
                 <form onSubmit={handleSubmit} style={{color:"black"}}>
                   <Row>
