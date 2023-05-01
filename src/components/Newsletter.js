@@ -57,7 +57,7 @@ axios.get("https://portoflio-resume-default-rtdb.firebaseio.com/collection.json"
                   localStorage.removeItem('like')
                 })
                 .catch(error => {
-                  console.error('Error liking :', error);
+                  console.error('Error liking ');
                 });
                 setCount(count-1)
               }
