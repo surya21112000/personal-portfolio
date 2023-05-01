@@ -44,10 +44,7 @@ axios.get("https://portoflio-resume-default-rtdb.firebaseio.com/collection.json"
         <div className="newsletter-bx wow slideInUp">
           <Row>
             <Col lg={12} md={6} xl={5}>
-              {/* <h3>Like my Profile ?<br></br> </h3> */}
-              {status === 'sending' && <Alert>Sending...</Alert>}
-              {status === 'error' && <Alert variant="danger">{message}</Alert>}
-              {status === 'success' && <Alert variant="success">{message}</Alert>}
+   
             </Col>
             <Col md={6} xl={7}>
 
@@ -56,11 +53,11 @@ axios.get("https://portoflio-resume-default-rtdb.firebaseio.com/collection.json"
                 
                 axios.put('https://suryaportfolio-db36b-default-rtdb.firebaseio.com/collection.json', {collection:count-1})
                 .then(response => {
-                  console.log('User updated successfully:', response.data);
+                  console.log('Liked successfully:', response.data);
                   localStorage.removeItem('like')
                 })
                 .catch(error => {
-                  console.error('Error updating user:', error);
+                  console.error('Error liking :', error);
                 });
                 setCount(count-1)
               }
