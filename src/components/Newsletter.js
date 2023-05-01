@@ -21,7 +21,7 @@ if(localStorage.getItem('like')){
 else{
   setLike(false)
 }
-axios.get("https://suryaportfolio-db36b-default-rtdb.firebaseio.com/collection.json").then(res=>{console.log(res.data);setCount(res.data) } ).catch(err=>{console.log(err)})
+axios.get("https://portoflio-resume-default-rtdb.firebaseio.com/collection.json").then(res=>{console.log(res.data);setCount(res.data) } ).catch(err=>{console.log(err)})
 
 
   }, [status])
@@ -54,7 +54,7 @@ axios.get("https://suryaportfolio-db36b-default-rtdb.firebaseio.com/collection.j
 
               {like?<HeartFill  color="red" size={50} style={{cursor:"pointer"}}  onClick={()=>{setLike(false)
                 
-                axios.put('https://suryaportfolio-db36b-default-rtdb.firebaseio.com/.json', {collection:count-1})
+                axios.put('https://suryaportfolio-db36b-default-rtdb.firebaseio.com/collection.json', {collection:count-1})
                 .then(response => {
                   console.log('User updated successfully:', response.data);
                   localStorage.removeItem('like')
@@ -66,7 +66,7 @@ axios.get("https://suryaportfolio-db36b-default-rtdb.firebaseio.com/collection.j
               }
               }/>:<Heart color="red" size={50} style={{cursor:"pointer"}}  onClick={()=>{setLike(true)
                 
-                axios.put('https://suryaportfolio-db36b-default-rtdb.firebaseio.com/.json', {collection:count+1})
+                axios.put('https://suryaportfolio-db36b-default-rtdb.firebaseio.com/collection.json', {collection:count+1})
                 .then(response => {
                   
                   localStorage.setItem('like', like)
