@@ -21,10 +21,12 @@ if(localStorage.getItem('like')){
 else{
   setLike(false)
 }
-axios.get("https://portoflio-resume-default-rtdb.firebaseio.com/collection.json").then(res=>{console.log(res.data);setCount(res.data) } ).catch(err=>{console.log(err)})
+axios.get('https://portoflio-resume-default-rtdb.firebaseio.com/collection.json').then(res=>{
+  setCount(res.data.collection)
+})
 
 
-  }, [status])
+  }, [])
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -49,9 +51,9 @@ axios.get("https://portoflio-resume-default-rtdb.firebaseio.com/collection.json"
             <Col md={6} xl={7}>
 
 
-              {like?<HeartFill  color="red" size={50} style={{cursor:"pointer"}}  onClick={()=>{setLike(false)
+              {like?<HeartFill  color="red"  style={{cursor:"pointer",fontSize:78}}  onClick={()=>{setLike(false)
                 
-                axios.put('https://suryaportfolio-db36b-default-rtdb.firebaseio.com/collection.json', {collection:count-1})
+                axios.put('https://portoflio-resume-default-rtdb.firebaseio.com/collection.json', {collection:count-1})
                 .then(response => {
                   console.log('Liked successfully:', response.data);
                   localStorage.removeItem('like')
@@ -61,9 +63,9 @@ axios.get("https://portoflio-resume-default-rtdb.firebaseio.com/collection.json"
                 });
                 setCount(count-1)
               }
-              }/>:<Heart color="red" size={50} style={{cursor:"pointer"}}  onClick={()=>{setLike(true)
+              }/>:<Heart color="red" style={{cursor:"pointer",fontSize:78}}  onClick={()=>{setLike(true)
                 
-                axios.put('https://suryaportfolio-db36b-default-rtdb.firebaseio.com/collection.json', {collection:count+1})
+                axios.put('https://portoflio-resume-default-rtdb.firebaseio.com/collection.json', {collection:count+1})
                 .then(response => {
                   
                   localStorage.setItem('like', like)

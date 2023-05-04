@@ -2,11 +2,11 @@ import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
 import projImg1 from "../assets/img/HR.png";
 import projImg2 from "../assets/img/Socio-connect.png";
-import projImg3 from "../assets/img/BookSearch.png";
+import projImg3 from "../assets/img/project-img3.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
-
+import ClipLoader from "react-spinners/ClipLoader";
 export const Projects = () => {
 
   const projects = [
@@ -26,7 +26,7 @@ export const Projects = () => {
   ];
 
   return (
-    <section className="project" id="project">
+    <section className="project" id="projects">
       <Container>
         <Row>
           <Col size={12}>
