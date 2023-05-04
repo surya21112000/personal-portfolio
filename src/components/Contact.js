@@ -67,6 +67,11 @@ setMessageError(false)
   else{
     e.preventDefault();
     setButtonText("Sending...");
+setEmailError(false)
+setMessageError(false)
+setfNameError(false)
+setSNameError(false)
+setPhoneError(false)
 
     setTimeout(() => {
       setButtonText("Sent successfully");
